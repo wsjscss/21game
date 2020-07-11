@@ -69,6 +69,10 @@ end
 
 -- Создание колоды со случайным набором карт
 local deck = Deck:create()
+
+-- Создание игроков
 local botA = Player.create()
 local botB = Player.create()
+
+-- Запуск раунда
 startRound()
