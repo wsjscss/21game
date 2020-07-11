@@ -46,7 +46,17 @@ function showWinner(bot)
 end
 
 function loopMove(bot)
-  while bot.isMoving == 1 do
+  --[[
+    Тут запускается цикл в котром 
+    1. игрок берёт одну карту
+    2. добавляется очки
+    3. игрок решает брать ещё или нет.
+    
+    Цикл крутится до тех пор пока 
+    1. Игрок сам не решит что ему хватит
+    2. Игрок набрал меньше 19 очков (Если набрал 19, то может решить взять ещё одну карту и ему может выпасть двойка)
+  --]]
+  while bot.isMoving == 1 and bot.currentScore < 19 do
     local card = deck.getCard()
     bot:addScore(card)
 
